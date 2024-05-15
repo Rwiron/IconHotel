@@ -117,6 +117,16 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="available_from" class="form-label">Available From</label>
+                            <input type="datetime-local" class="form-control" id="available_from" name="available_from">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="available_to" class="form-label">Available To</label>
+                            <input type="datetime-local" class="form-control" id="available_to" name="available_to">
+                        </div>
+
+                        <div class="mb-3">
                             <label for="photo" class="form-label">Room Photo</label>
                             <input type="file" class="form-control" id="photo" name="photo" accept="image/*">
                         </div>

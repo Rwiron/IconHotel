@@ -29,6 +29,8 @@ class RoomController extends Controller
             'capacity' => 'required|integer',
             'floor' => 'nullable|integer',
             'location' => 'required|string|max:255',
+            'available_from' => 'nullable|date|date_format:Y-m-d\TH:i',
+            'available_to' => 'nullable|date|date_format:Y-m-d\TH:i',
             'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 

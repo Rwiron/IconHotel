@@ -35,6 +35,8 @@ class Room extends Model
         'capacity',
         'view',
         'photo',
-        'floor'
+        'floor',
+        'available_from',
+        'available_to'
     ];
 }
