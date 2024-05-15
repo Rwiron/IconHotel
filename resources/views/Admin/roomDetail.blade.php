@@ -14,15 +14,18 @@
                             </div>
                             <div class="col-lg-5">
                                 <div class="row">
-                                    @foreach ($photos as $photo)
+                                    @foreach ($photos->take(6) as $photo)
                                         <div class="col-6 mb-3">
                                             <img src="{{ asset($photo->photo) }}" alt="Room Photo" class="img-fluid"
                                                 style="width: 100%; height: 150px; object-fit: cover;">
                                         </div>
                                     @endforeach
-                                    <div class="col-12">
-                                        <button class="btn btn-primary w-100">Show all photos</button>
-                                    </div>
+                                    @if ($photos->count() > 6)
+                                        <div class="col-12">
+                                            <button class="btn btn-primary w-100" data-bs-toggle="modal"
+                                                data-bs-target="#photosModal">Show all photos</button>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -30,9 +33,9 @@
                             <strong>Room number:</strong> {{ $room->number }}<br>
                             <strong>Price:</strong> {{ $room->price }} Rwf /Night<br>
                             <strong>Status:</strong> {{ $room->status }}<br>
-                            <strong>Beds:</strong> {{ $room->bed_type }} Room<br>
+                            <strong>Beds:</strong> {{ $room->bed_type }}<br>
                             <strong>Available from:</strong> {{ $room->available_from }}<br>
-                            <strong> To:</strong> {{ $room->available_to }}<br>
+                            <strong>To:</strong> {{ $room->available_to }}<br>
                             <strong>Description:</strong> {{ $room->description }}<br>
                         </p>
                         <hr>
@@ -52,6 +55,28 @@
                             transformed into a bedroom...
                         </p>
                         <button class="btn btn-primary">Book Room</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Photos Modal -->
+    <div class="modal fade" id="photosModal" tabindex="-1" aria-labelledby="photosModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="photosModalLabel">All Photos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        @foreach ($photos as $photo)
+                            <div class="col-6 mb-3">
+                                <img src="{{ asset($photo->photo) }}" alt="Room Photo" class="img-fluid"
+                                    style="width: 100%; height: 150px; object-fit: cover;">
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
