@@ -38,6 +38,20 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ url('admin/room-management/add-room-images') }}"
+                            class="{{ Request::is('admin/room-management/add-room-image') ? 'active' : '' }}">
+                            <i class="bi bi-images"></i><span>Add Room Images</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ url('admin/room-management/add-room-services') }}"
+                            class="{{ Request::is('admin/room-management/add-room-services') ? 'active' : '' }}">
+                            <i class="bi bi-tools"></i><span>Add Room Services</span>
+                        </a>
+                    </li>
+
+                    <li>
                         <a href="{{ url('admin/room-management/list-room') }}"
                             class="{{ Request::is('room-management/list-room') ? 'active' : '' }}">
                             <i class="bi bi-list"></i><span>List Rooms</span>

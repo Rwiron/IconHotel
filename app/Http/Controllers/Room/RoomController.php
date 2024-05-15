@@ -17,7 +17,7 @@ class RoomController extends Controller
 
     public function store(Request $request)
     {
-        // Validate the input
+        // Validate the input and check for duplication
         $validator = $request->validate([
             'number' => 'required|string|max:255',
             'type' => 'required|string|max:255',
@@ -32,6 +32,16 @@ class RoomController extends Controller
             'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
+        // Check if the room with the same number and location already exists
+        $existingRoom = Room::where('number', $request->number)
+            ->where('location', $request->location)
+            ->first();
+
+        if ($existingRoom) {
+            Toastr::error('A room with the same number and location already exists!');
+            return redirect()->back()->withInput();
+        }
+
         // Create new room with validated data except 'photo'
         $room = new Room($request->except(['photo']));
 
@@ -45,7 +55,9 @@ class RoomController extends Controller
             // Set the path to the 'photo' field of the room
             $room->photo = $photoPath;
         }
+
         $room->save();
+
         // Use Toastr to notify about successful creation
         Toastr::success('Room added successfully!');
 

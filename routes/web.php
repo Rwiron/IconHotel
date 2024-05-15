@@ -8,6 +8,8 @@ use App\Http\Controllers\Staff\DashboardController as StaffDashboardController;
 use App\Http\Controllers\Guest\DashboardController as GuestDashboardController;
 use App\Http\Controllers\Room\RoomController;
 use App\Http\Controllers\Room\ListRoomController;
+use App\Http\Controllers\Room\RoomImageController;
+
 
 use App\Http\Controllers\Website\webController;
 
@@ -48,6 +50,7 @@ Route::middleware(['auth', 'checkrole:admin'])->group(function () {
     Route::get('admin/room-management/add-room', [RoomController::class, 'create']);
     Route::post('admin/room-management/add-room', [RoomController::class, 'store'])->name('admin.rooms.store');
     Route::get('admin/room-management/list-room', [ListRoomController::class, 'list'])->name('admin.rooms.list');
+    Route::get('admin/room-management/add-room-images', [RoomImageController::class, 'show']);
 });
 
 
