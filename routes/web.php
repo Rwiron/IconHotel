@@ -9,7 +9,7 @@ use App\Http\Controllers\Guest\DashboardController as GuestDashboardController;
 use App\Http\Controllers\Room\RoomController;
 use App\Http\Controllers\Room\ListRoomController;
 use App\Http\Controllers\Room\RoomImageController;
-
+use App\Http\Controllers\Room\RoomServiceController;
 
 use App\Http\Controllers\Website\webController;
 
@@ -50,7 +50,19 @@ Route::middleware(['auth', 'checkrole:admin'])->group(function () {
     Route::get('admin/room-management/add-room', [RoomController::class, 'create']);
     Route::post('admin/room-management/add-room', [RoomController::class, 'store'])->name('admin.rooms.store');
     Route::get('admin/room-management/list-room', [ListRoomController::class, 'list'])->name('admin.rooms.list');
-    Route::get('admin/room-management/add-room-images', [RoomImageController::class, 'show']);
+
+    //Admin Manage many image route
+    Route::prefix('admin')->group(function () {
+        Route::get('room-management/add-room-images', [RoomImageController::class, 'show'])->name('admin.room-images.show');
+        Route::post('room-management/add-room-images', [RoomImageController::class, 'store'])->name('admin.room-images.store');
+    });
+
+    //Admin manage Services route
+    Route::prefix('admin')->group(function () {
+        Route::get('room-management/add-room-service', [RoomServiceController::class, 'show'])->name('admin.room-services.show');
+        Route::post('room-management/add-room-service', [RoomServiceController::class, 'store'])->name('admin.room-services.store');
+        Route::delete('room-management/delete-room-service/{id}', [RoomServiceController::class, 'destroy'])->name('admin.room-services.destroy');
+    });
 });
 
 

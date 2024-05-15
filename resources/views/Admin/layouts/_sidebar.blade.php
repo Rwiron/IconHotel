@@ -40,14 +40,14 @@
                     <li>
                         <a href="{{ url('admin/room-management/add-room-images') }}"
                             class="{{ Request::is('admin/room-management/add-room-image') ? 'active' : '' }}">
-                            <i class="bi bi-images"></i><span>Add Room Images</span>
+                            <i class="bi bi-images"></i><span>Rooms Images</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="{{ url('admin/room-management/add-room-services') }}"
+                        <a href="{{ url('admin/room-management/add-room-service') }}"
                             class="{{ Request::is('admin/room-management/add-room-services') ? 'active' : '' }}">
-                            <i class="bi bi-tools"></i><span>Add Room Services</span>
+                            <i class="bi bi-tools"></i><span>Rooms Services</span>
                         </a>
                     </li>
 
