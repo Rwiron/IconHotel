@@ -36,10 +36,10 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <!-- Buttons with icons -->
-                                            <button type="button" class="btn btn-sm btn-outline-secondary"
+                                            <a href="{{ route('admin.room.detail', $room->id) }}" class="btn btn-sm btn-outline-secondary"
                                                 data-bs-toggle="tooltip" data-bs-placement="top" title="View Details">
                                                 <i class="bi bi-eye-fill"></i>
-                                            </button>
+                                            </a>
                                             <button type="button" class="btn btn-sm btn-outline-danger"
                                                 data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
                                                 <i class="bi bi-trash-fill"></i>

@@ -10,7 +10,7 @@ use App\Http\Controllers\Room\RoomController;
 use App\Http\Controllers\Room\ListRoomController;
 use App\Http\Controllers\Room\RoomImageController;
 use App\Http\Controllers\Room\RoomServiceController;
-
+use App\Http\Controllers\Room\RoomDetailController;
 use App\Http\Controllers\Website\webController;
 
 
@@ -62,6 +62,11 @@ Route::middleware(['auth', 'checkrole:admin'])->group(function () {
         Route::get('room-management/add-room-service', [RoomServiceController::class, 'show'])->name('admin.room-services.show');
         Route::post('room-management/add-room-service', [RoomServiceController::class, 'store'])->name('admin.room-services.store');
         Route::delete('room-management/delete-room-service/{id}', [RoomServiceController::class, 'destroy'])->name('admin.room-services.destroy');
+    });
+
+    Route::prefix('admin')->group(function () {
+        Route::get('room-management/list-rooms', [ListRoomController::class, 'list'])->name('admin.rooms.list');
+        Route::get('room-management/room-detail/{id}', [RoomDetailController::class, 'detail'])->name('admin.room.detail');
     });
 });
 
