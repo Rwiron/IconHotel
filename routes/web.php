@@ -67,6 +67,7 @@ Route::middleware(['auth', 'checkrole:admin'])->group(function () {
     Route::prefix('admin')->group(function () {
         Route::get('room-management/list-rooms', [ListRoomController::class, 'list'])->name('admin.rooms.list');
         Route::get('room-management/room-detail/{id}', [RoomDetailController::class, 'detail'])->name('admin.room.detail');
+        Route::delete('room-management/delete-room/{id}', [ListRoomController::class, 'destroy'])->name('admin.room.destroy');
     });
 });
 
