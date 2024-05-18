@@ -57,43 +57,32 @@
                             <i class="bi bi-list"></i><span>List Rooms</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ url('room-management/edit-room') }}"
-                            class="{{ Request::is('room-management/edit-room') ? 'active' : '' }}">
-                            <i class="bi bi-pencil"></i><span>Edit Rooms</span>
-                        </a>
-                    </li>
                 </ul>
             </li><!-- End Room Management Nav -->
 
             <li class="nav-item">
-                <a class="nav-link {{ in_array(Request::segment(1), ['staff-management', 'add-staff', 'list-staff']) ? '' : 'collapsed' }}"
+                <a class="nav-link {{ in_array(Request::segment(2), ['staff', 'add-staff', 'list-staff']) ? '' : 'collapsed' }}"
                     data-bs-target="#staff-mgmt-dropdown" data-bs-toggle="collapse">
                     <i class="bi bi-person-badge"></i>
                     <span>Staff Management</span>
                     <i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="staff-mgmt-dropdown"
-                    class="nav-content collapse {{ in_array(Request::segment(1), ['staff-management', 'add-staff', 'list-staff']) ? 'show' : '' }}"
+                    class="nav-content collapse {{ in_array(Request::segment(2), ['staff', 'add-staff', 'list-staff']) ? 'show' : '' }}"
                     data-bs-parent="#sidebar-nav">
+
                     <li>
-                        <a href="{{ url('staff-management/add-staff') }}"
-                            class="{{ Request::is('staff-management/add-staff') ? 'active' : '' }}">
-                            <i class="bi bi-plus-circle"></i><span>Add Staff</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('staff-management/list-staff') }}"
-                            class="{{ Request::is('staff-management/list-staff') ? 'active' : '' }}">
+                        <a href="{{ route('admin.staff.index') }}"
+                            class="{{ Request::is('admin/staff') ? 'active' : '' }}">
                             <i class="bi bi-list"></i><span>List Staff</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ url('staff-management/edit-staff') }}"
-                            class="{{ Request::is('staff-management/edit-staff') ? 'active' : '' }}">
-                            <i class="bi bi-pencil"></i><span>Edit Staff</span>
+                    {{-- <li>
+                        <a href="{{ route('admin.staff.create') }}"
+                            class="{{ Request::is('admin/staff/create') ? 'active' : '' }}">
+                            <i class="bi bi-plus-circle"></i><span>Add Staff</span>
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </li><!-- End Staff Management Nav -->
 

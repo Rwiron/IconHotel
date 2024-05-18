@@ -11,6 +11,7 @@ use App\Http\Controllers\Room\ListRoomController;
 use App\Http\Controllers\Room\RoomImageController;
 use App\Http\Controllers\Room\RoomServiceController;
 use App\Http\Controllers\Room\RoomDetailController;
+use App\Http\Controllers\Staff\AddStaffController;
 use App\Http\Controllers\Website\webController;
 
 
@@ -69,6 +70,16 @@ Route::middleware(['auth', 'checkrole:admin'])->group(function () {
         Route::get('room-management/room-detail/{id}', [RoomDetailController::class, 'detail'])->name('admin.room.detail');
         Route::delete('room-management/delete-room/{id}', [ListRoomController::class, 'destroy'])->name('admin.room.destroy');
     });
+
+    Route::prefix('admin')->group(function () {
+        Route::get('staff', [AddStaffController::class, 'index'])->name('admin.staff.index');
+        Route::get('staff/create', [AddStaffController::class, 'create'])->name('admin.staff.create');
+        Route::post('staff', [AddStaffController::class, 'store'])->name('admin.staff.store');
+        Route::get('staff/{id}/edit', [AddStaffController::class, 'edit'])->name('admin.staff.edit');
+        Route::put('staff/{id}', [AddStaffController::class, 'update'])->name('admin.staff.update');
+        Route::delete('staff/{id}', [AddStaffController::class, 'destroy'])->name('admin.staff.destroy');
+    });
+
 });
 
 

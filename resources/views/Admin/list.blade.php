@@ -60,7 +60,6 @@
             @endif
         </div>
     </div>
-
     <!-- Bootstrap Tooltip Activation Script -->
     <script>
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))

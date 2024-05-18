@@ -36,12 +36,13 @@
                         <div class="mb-3">
                             <label for="number" class="form-label">Room Number</label>
                             <input type="text" class="form-control" id="number" name="number"
-                                placeholder="Please Save Room number eg like Room 1">
+                                placeholder="Please Save Room number eg like Room 1" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="type" class="form-label">Room Type</label>
                             <select class="form-control" id="type" name="type">
+                                <option value="" disabled selected>Select Room Please</option>
                                 <option value="Single Room">Single Room</option>
                                 <option value="Double Room">Double Room</option>
                                 <option value="Twin Room">Twin Room</option>
@@ -99,6 +100,7 @@
                         <div class="mb-3">
                             <label for="bed_type" class="form-label">Bed Type</label>
                             <select class="form-control" id="bed_type" name="bed_type" required>
+                                <option value="" disabled selected>Select Bed Please</option>
                                 <option value="single">Single Bed</option>
                                 <option value="double">Double Bed</option>
                                 <option value="queen">Queen Bed</option>
