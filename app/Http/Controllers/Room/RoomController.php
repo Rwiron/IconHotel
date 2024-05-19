@@ -21,7 +21,7 @@ class RoomController extends Controller
         $validator = $request->validate([
             'number' => 'required|string|max:255',
             'type' => 'required|string|max:255',
-            'price' => 'required|numeric',
+            'price' => 'required|string', // keep as string for validation
             'status' => 'required|string|max:255',
             'description' => 'nullable|string',
             'size' => 'nullable|integer',
@@ -33,6 +33,9 @@ class RoomController extends Controller
             'available_to' => 'nullable|date|date_format:Y-m-d\TH:i',
             'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+
+        // Remove commas from the price and convert to float
+        $price = str_replace(',', '', $request->input('price'));
 
         // Check if the room with the same number and location already exists
         $existingRoom = Room::where('number', $request->number)
@@ -46,7 +49,7 @@ class RoomController extends Controller
 
         // Create new room with validated data except 'photo'
         $room = new Room($request->except(['photo']));
-
+        $room->price = $price;
         // Handle file upload
         if ($request->hasFile('photo')) {
             $image = $request->file('photo');

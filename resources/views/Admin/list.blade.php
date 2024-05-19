@@ -16,7 +16,7 @@
                             <img src="{{ asset($room->photo) }}" alt="Room Image" class="card-img-top"
                                 style="width: 100%; height: 200px; object-fit: cover;">
                             <div class="card-body d-flex flex-column">
-                                <small class="text-muted">{{ $room->price }} Rwf /Night</small>
+                                <small class="text-muted">{{ number_format($room->price) }} Rwf /Night</small>
                                 <h5 class="card-title mt-2"><strong>{{ $room->type }} | {{ $room->location }}</strong>
                                 </h5>
                                 <div class="d-flex justify-content-between align-items-center my-2">

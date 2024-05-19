@@ -113,6 +113,22 @@
     </script>
 
 
+    <script>
+        function formatPrice(input) {
+            // Remove any non-digit character and commas
+            let value = input.value.replace(/,/g, '').replace(/[^\d.]/g, '');
+
+            // Format the value with commas as thousand separators
+            let formattedValue = parseFloat(value).toLocaleString('en-US', {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 2
+            });
+
+            // Update the input value with the formatted value
+            input.value = formattedValue;
+        }
+    </script>
+
 
 </body>
 

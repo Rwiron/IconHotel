@@ -31,11 +31,13 @@
                         </div>
                         <p class="card-text mt-3">
                             <strong>Room number:</strong> {{ $room->number }}<br>
-                            <strong>Price:</strong> {{ $room->price }} Rwf /Night<br>
+                            <strong>Price:</strong> {{ number_format($room->price) }} Rwf /Night<br>
                             <strong>Status:</strong> {{ $room->status }}<br>
                             <strong>Beds:</strong> {{ $room->bed_type }}<br>
-                            <strong>Available from:</strong> {{ $room->available_from }}<br>
-                            <strong>To:</strong> {{ $room->available_to }}<br>
+                            <strong>Available from:</strong>
+                            {{ \Carbon\Carbon::parse($room->available_from)->format('Y-m-d h:i A') }}<br>
+                            <strong> To:</strong>
+                            {{ \Carbon\Carbon::parse($room->available_to)->format('Y-m-d h:i A') }}<br>
                             <strong>Description:</strong> {{ $room->description }}<br>
                         </p>
                         <hr>

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Icon Place - Hotel HTML Template</title>
+    <title>About Us - Icon Place</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
@@ -11,7 +11,6 @@
     <!-- Favicon -->
     <link href="{{ asset('frontend/img/favicon.ico') }}" rel="icon" />
 
-    <!-- Google Web Fonts -->
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -122,22 +121,16 @@
             </div>
         </div>
         <!-- Header End -->
-
         <!-- Page Header Start -->
         <div class="container-fluid page-header mb-5 p-0"
             style="background-image: url({{ asset('frontend/img/carousel-1.jpg') }});">
             <div class="container-fluid page-header-inner py-5">
                 <div class="container text-center pb-5">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">
-                        Icon Place
-                    </h1>
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center text-uppercase">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">
-                                Rooms
-                            </li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">About Us</li>
                         </ol>
                     </nav>
                 </div>
@@ -145,101 +138,28 @@
         </div>
         <!-- Page Header End -->
 
-        <div class="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="container">
-                <div class="bg-white shadow" style="padding: 35px">
-                    <!-- Title for Booking Section -->
-                    <div class="row mb-4">
-                        <div class="col-12">
-                            <h2 class="text-center text-primary">Check Availability and Book</h2>
-                        </div>
-                    </div>
-                    <!-- Booking Form Rows -->
-                    <div class="row g-2">
-                        <div class="col-md-10">
-                            <div class="row g-4">
-                                <div class="col-md-3">
-                                    <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input"
-                                            placeholder="Check in" data-target="#date1"
-                                            data-toggle="datetimepicker" />
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="date" id="date2" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input"
-                                            placeholder="Check out" data-target="#date2"
-                                            data-toggle="datetimepicker" />
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <select class="form-select">
-                                        <option selected>Adult</option>
-                                        <option value="1">Adult 1</option>
-                                        <option value="2">Adult 2</option>
-                                        <option value="3">Adult 3</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <select class="form-select">
-                                        <option selected>Child</option>
-                                        <option value="1">Child 1</option>
-                                        <option value="2">Child 2</option>
-                                        <option value="3">Child 3</option>
-                                    </select>
-                                </div>
-                                <!-- New Province and Location Selectors -->
-                                <div class="col-md-3">
-                                    <select class="form-select" id="province">
-                                        <option selected>Select Province</option>
-                                        <option value="Province1">Province 1</option>
-                                        <option value="Province2">Province 2</option>
-                                        <option value="Province3">Province 3</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <select class="form-select" id="location">
-                                        <option selected>Select District</option>
-                                        <option value="Location1">Location 1</option>
-                                        <option value="Location2">Location 2</option>
-                                        <option value="Location3">Location 3</option>
-                                    </select>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <button class="btn btn-primary w-100">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Booking End -->
-
+        <!-- About Start -->
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="row g-5 align-items-center">
-                    <div class="col-lg-12"> <!-- Adjusted to use full width for text-centered focus -->
-                        <header>
-                            <h6 class="section-title text-start text-primary text-uppercase">
-                                About Us
-                            </h6>
-                            <h1 class="mb-4">
-                                Welcome to <span class="text-primary text-uppercase">Icon Place</span>
-                            </h1>
-                        </header>
+                    <div class="col-lg-6">
+                        <h6 class="section-title text-start text-primary text-uppercase">About Us</h6>
+                        <h1 class="mb-4">Discover <span class="text-primary text-uppercase">Icon Place</span></h1>
                         <p class="mb-4">
-                            Booking our private rooms at your convenient time and location. A Retreat into Nature.
+                            Established with a vision to redefine luxury and comfort, Icon Place has become a symbol of
+                            excellence in the hospitality industry. Our journey began with a simple idea - to create a
+                            unique space where guests could experience the perfect blend of nature's tranquility and
+                            modern amenities. Over the years, we have stayed true to our commitment to providing
+                            impeccable service and unforgettable experiences.
                         </p>
                         <p class="mb-4">
-                            Welcome to Icon Places, where hospitality meets nature in a harmonious blend of luxury and
-                            tranquility. We aim to create a sanctuary where the beauty of nature converges with the
-                            comforts of modern luxury, offering a truly exceptional hospitality experience. At Icon
-                            Places, your experience goes beyond accommodation; it's an invitation to discover a retreat
-                            that is uniquely ours and, soon, yours to explore. We look forward to welcoming you to a
-                            world where hospitality is an art, and nature is our greatest inspiration.
+                            At Icon Place, we are more than just a hotel. We are a community that values the importance
+                            of personalized service, attention to detail, and a deep respect for our natural
+                            surroundings. Our dedicated team works tirelessly to ensure that every guest feels at home
+                            and leaves with cherished memories.
+                        </p>
+                        <p class="mb-4">
+                            Our facilities include:
                         </p>
                         <ul class="list-unstyled">
                             <li><i class="fa fa-check text-primary me-2"></i>Private Retreat</li>
@@ -251,7 +171,56 @@
                             <li><i class="fa fa-check text-primary me-2"></i>24/7 Room service</li>
                             <li><i class="fa fa-check text-primary me-2"></i>Equipped Kitchen</li>
                         </ul>
+                        <div class="row g-3 pb-4">
+                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
+                                <div class="border rounded p-1">
+                                    <div class="border rounded text-center p-4">
+                                        <i class="fa fa-hotel fa-2x text-primary mb-2"></i>
+                                        <h2 class="mb-1" data-toggle="counter-up">1234</h2>
+                                        <p class="mb-0">Rooms</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
+                                <div class="border rounded p-1">
+                                    <div class="border rounded text-center p-4">
+                                        <i class="fa fa-users-cog fa-2x text-primary mb-2"></i>
+                                        <h2 class="mb-1" data-toggle="counter-up">1234</h2>
+                                        <p class="mb-0">Staff</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="border rounded p-1">
+                                    <div class="border rounded text-center p-4">
+                                        <i class="fa fa-users fa-2x text-primary mb-2"></i>
+                                        <h2 class="mb-1" data-toggle="counter-up">1234</h2>
+                                        <p class="mb-0">Clients</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <a class="btn btn-primary py-3 px-5 mt-2" href="#">Explore More</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row g-3">
+                            <div class="col-6 text-end">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s"
+                                    src="{{ asset('frontend/img/about-1.jpg') }}" style="margin-top: 25%;">
+                            </div>
+                            <div class="col-6 text-start">
+                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s"
+                                    src="{{ asset('frontend/img/about-2.jpg') }}">
+                            </div>
+                            <div class="col-6 text-end">
+                                <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s"
+                                    src="{{ asset('frontend/img/about-3.jpg') }}">
+                            </div>
+                            <div class="col-6 text-start">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s"
+                                    src="{{ asset('frontend/img/about-4.jpg') }}">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -259,171 +228,102 @@
         <!-- About End -->
 
 
-
-        <!-- Room Start -->
+        <!-- Team Start -->
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="section-title text-center text-primary text-uppercase">
-                        Our Rooms
-                    </h6>
-                    <h1 class="mb-5">
-                        Explore Our <span class="text-primary text-uppercase">Rooms</span> from different Locations
-                    </h1>
+                    <h6 class="section-title text-center text-primary text-uppercase">Our Team</h6>
+                    <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Staffs</span></h1>
                 </div>
                 <div class="row g-4">
-                    @if ($rooms->isEmpty())
-                        <div class="col-12">
-                            <div class="alert alert-info text-center">
-                                No rooms available.
-                            </div>
-                        </div>
-                    @else
-                        @foreach ($rooms->take(12) as $room)
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="room-item shadow rounded overflow-hidden" style="height: 100%;">
-                                    <div class="position-relative">
-                                        <img class="img-fluid" src="{{ asset($room->photo) }}" alt="Room Image"
-                                            style="height: 250px; object-fit: cover; width: 100%;" />
-                                        <small
-                                            class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">
-                                            {{ $room->price }} Rwf/Night
-                                        </small>
-                                    </div>
-                                    <div class="p-4 mt-2" style="flex: 1;">
-                                        <div class="d-flex justify-content-between mb-3">
-                                            <h5 class="mb-0">{{ $room->type }} | {{ $room->location }}</h5>
-                                            <div class="ps-2">
-                                                @for ($i = 0; $i < 5; $i++)
-                                                    <small class="fa fa-star text-primary"></small>
-                                                @endfor
-                                            </div>
-                                        </div>
-                                        <div class="d-flex mb-3">
-                                            <small class="border-end me-3 pe-3"><i
-                                                    class="fa fa-bed text-primary me-2"></i>{{ $room->beds }}
-                                                Bed</small>
-                                            <small class="border-end me-3 pe-3"><i
-                                                    class="fa fa-bath text-primary me-2"></i>{{ $room->baths }}
-                                                Bath</small>
-                                            <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
-                                        </div>
-                                        <p class="text-body mb-3">
-                                            {{ \Illuminate\Support\Str::limit($room->description, 100, $end = '...') }}
-                                        </p>
-                                        <div class="d-flex justify-content-between">
-                                            <a class="btn btn-sm btn-primary rounded py-2 px-4"
-                                                href="{{ route('room.detail', $room->id) }}">View Detail</a>
-                                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="#">Book
-                                                Now</a>
-                                        </div>
-
-                                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="rounded shadow overflow-hidden">
+                            <div class="position-relative">
+                                <img class="img-fluid" src="{{ asset('frontend/img/team-1.jpg') }}" alt="">
+                                <div
+                                    class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                                    <a class="btn btn-square btn-primary mx-1" href=""><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-primary mx-1" href=""><i
+                                            class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-primary mx-1" href=""><i
+                                            class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
-                        @endforeach
-                    @endif
-                </div>
-            </div>
-        </div>
-        <!-- Room End -->
-
-
-
-
-        <!-- Testimonial Start -->
-        <div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s"
-            style="margin-bottom: 90px">
-            <div class="container">
-                <div class="owl-carousel testimonial-carousel py-5">
-                    <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
-                        <p>
-                            Tempor stet labore dolor clita stet diam amet ipsum dolor duo
-                            ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet
-                            est kasd kasd et erat magna eos
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded"
-                                src="{{ asset('frontend/img/testimonial-1.jpg') }}"
-                                style="width: 45px; height: 45px" />
-
-                            {{-- <img class="img-fluid flex-shrink-0 rounded"
-                                src="{{ asset('frontend/img/testimonial-1.jpg') }}" alt="Testimonial Image" /> --}}
-
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
+                            <div class="text-center p-4 mt-3">
+                                <h5 class="fw-bold mb-0">Full Name</h5>
+                                <small>Designation</small>
                             </div>
                         </div>
-                        <i
-                            class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
                     </div>
-                    <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
-                        <p>
-                            Tempor stet labore dolor clita stet diam amet ipsum dolor duo
-                            ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet
-                            est kasd kasd et erat magna eos
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded"
-                                src="{{ asset('frontend/img/testimonial-2.jpg') }}"
-                                style="width: 45px; height: 45px" />
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="rounded shadow overflow-hidden">
+                            <div class="position-relative">
+                                <img class="img-fluid" src="{{ asset('frontend/img/team-2.jpg') }}" alt="">
+                                <div
+                                    class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                                    <a class="btn btn-square btn-primary mx-1" href=""><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-primary mx-1" href=""><i
+                                            class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-primary mx-1" href=""><i
+                                            class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center p-4 mt-3">
+                                <h5 class="fw-bold mb-0">Full Name</h5>
+                                <small>Designation</small>
                             </div>
                         </div>
-                        <i
-                            class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
                     </div>
-                    <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
-                        <p>
-                            Tempor stet labore dolor clita stet diam amet ipsum dolor duo
-                            ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet
-                            est kasd kasd et erat magna eos
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded"
-                                src="{{ asset('frontend/img/testimonial-3.jpg') }}"
-                                style="width: 45px; height: 45px" />
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="rounded shadow overflow-hidden">
+                            <div class="position-relative">
+                                <img class="img-fluid" src="{{ asset('frontend/img/team-3.jpg') }}" alt="">
+                                <div
+                                    class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                                    <a class="btn btn-square btn-primary mx-1" href=""><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-primary mx-1" href=""><i
+                                            class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-primary mx-1" href=""><i
+                                            class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center p-4 mt-3">
+                                <h5 class="fw-bold mb-0">Full Name</h5>
+                                <small>Designation</small>
                             </div>
                         </div>
-                        <i
-                            class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
-
-        <!-- Newsletter Start -->
-        <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 border rounded p-1">
-                    <div class="border rounded text-center p-1">
-                        <div class="bg-white rounded text-center p-5">
-                            <h4 class="mb-4">
-                                Subscribe Our
-                                <span class="text-primary text-uppercase">Newsletter</span>
-                            </h4>
-                            <div class="position-relative mx-auto" style="max-width: 400px">
-                                <input class="form-control w-100 py-3 ps-4 pe-5" type="text"
-                                    placeholder="Enter your email" />
-                                <button type="button"
-                                    class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">
-                                    Submit
-                                </button>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="rounded shadow overflow-hidden">
+                            <div class="position-relative">
+                                <img class="img-fluid" src="{{ asset('frontend/img/team-3.jpg') }}" alt="">
+                                <div
+                                    class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                                    <a class="btn btn-square btn-primary mx-1" href=""><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-primary mx-1" href=""><i
+                                            class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-primary mx-1" href=""><i
+                                            class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center p-4 mt-3">
+                                <h5 class="fw-bold mb-0">Full Name</h5>
+                                <small>Designation</small>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Newsletter Start -->
-
+        <!-- Team End -->
+        <br>
+        <br>
+        <br>
+        <br>
         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
             <div class="container pb-5">
@@ -509,6 +409,7 @@
             </div>
         </div>
         <!-- Footer End -->
+
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

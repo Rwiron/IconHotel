@@ -27,6 +27,10 @@ use App\Http\Controllers\Website\webController;
 */
 
 Route::get('/', [webController::class, 'index'])->name('room');
+Route::get('/room/{id}', [WebController::class, 'show'])->name('room.detail');
+Route::get('/services', [WebController::class, 'services'])->name('services');
+Route::get('/about', [WebController::class, 'about'])->name('about');
+
 
 // Route to show the registration form
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
