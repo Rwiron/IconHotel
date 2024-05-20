@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
-    <title>Room Details - Icon Place</title>
+    <title>Reservation - Icon Place</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
@@ -34,20 +35,10 @@
 
 <body>
     <div class="container-xxl bg-white p-0">
-        <!-- Spinner Start -->
-        <div id="spinner"
-            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
-
         <!-- Header Start -->
         <div class="container-fluid bg-dark px-0">
             <div class="row gx-0">
                 <div class="col-lg-3 bg-dark d-none d-lg-block">
-                    <!-- Navigation Bar Brand Logo -->
                     <a href="{{ url('/') }}"
                         class="navbar-brand d-flex flex-column align-items-center justify-content-center">
                         <img src="{{ asset('frontend/img/icon.png') }}" alt="Brand Icon">
@@ -86,16 +77,7 @@
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
                                 <a href="{{ url('/') }}" class="nav-item nav-link">Home</a>
-                                <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle"
-                                        data-bs-toggle="dropdown">Room</a>
-                                    <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="{{ url('/booking') }}" class="dropdown-item">Booking</a>
-                                        <a href="{{ url('/team') }}" class="dropdown-item">Our Team</a>
-                                        <a href="{{ url('/testimonial') }}" class="dropdown-item">Testimonial</a>
-                                    </div>
-                                </div>
-                                <a href="{{ url('/about') }}" class="nav-item nav-link">About US</a>
+                                <a href="{{ url('/about') }}" class="nav-item nav-link">About Us</a>
                                 <a href="{{ url('/services') }}" class="nav-item nav-link">Services</a>
                                 <a href="{{ url('/contact') }}" class="nav-item nav-link">Contact</a>
                             </div>
@@ -115,14 +97,14 @@
             <div class="container-fluid page-header-inner py-5">
                 <div class="container text-center pb-5">
                     <h1 class="display-3 text-white mb-3 animated slideInDown">
-                        Room Details
+                        Reservation
                     </h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center text-uppercase">
                             <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
                             <li class="breadcrumb-item"><a href="#">Rooms</a></li>
                             <li class="breadcrumb-item text-white active" aria-current="page">
-                                Room Details
+                                Reservation
                             </li>
                         </ol>
                     </nav>
@@ -131,80 +113,68 @@
         </div>
         <!-- Page Header End -->
 
+
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $room->type }} | {{ $room->location }}</h5>
-                                <div class="row">
-                                    <div class="col-lg-7">
-                                        <img src="{{ asset($room->photo) }}" alt="Room Image" class="img-fluid mb-3"
-                                            style="width: 100%; height: auto; object-fit: cover;">
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="row">
-                                            @foreach ($photos->take(4) as $photo)
-                                                <div class="col-6 mb-3">
-                                                    <img src="{{ asset($photo->photo) }}" alt="Room Photo"
-                                                        class="img-fluid"
-                                                        style="width: 100%; height: 150px; object-fit: cover;">
-                                                </div>
-                                            @endforeach
-                                            @if ($photos->count() > 4)
-                                                <div class="col-12">
-                                                    <button class="btn btn-primary w-100" data-bs-toggle="modal"
-                                                        data-bs-target="#allPhotosModal">Show all photos</button>
-                                                </div>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="card-text mt-3">
-                                    <strong>Room number:</strong> {{ $room->number }}<br>
-                                    <strong>Price:</strong> {{ number_format($room->price) }} Rwf /Night<br>
-                                    <strong>Status:</strong> {{ $room->status }}<br>
-                                    <strong>Beds:</strong> {{ $room->bed_type }} Room<br>
-                                    <strong>Available from:</strong>
-                                    {{ \Carbon\Carbon::parse($room->available_from)->format('Y-m-d h:i A') }}<br>
-                                    <strong> To:</strong>
-                                    {{ \Carbon\Carbon::parse($room->available_to)->format('Y-m-d h:i A') }}<br>
-                                    <strong>Description:</strong> {{ $room->description }}<br>
-                                </p>
-                                <hr>
-                                <h5>Services</h5>
-                                @if ($services->isNotEmpty())
-                                    <ul class="list-unstyled">
-                                        @foreach ($services as $service)
-                                            <li>
-                                                <i class="bi bi-check-circle-fill"></i>
-                                                <strong>{{ $service->service_name }}</strong>:
-                                                {{ $service->service_description }}
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                @else
-                                    <p>No services available for this room.</p>
-                                @endif
-                                <hr>
-                                <h5>Additional Information</h5>
-                                <p>
-                                    For the first time ever, and for just one night, the museum's iconic clock room will
-                                    be
-                                    transformed into a bedroom...
-                                </p>
-                            </div>
-                        </div>
+                        <!-- Room details content -->
                     </div>
 
-                    <div class="col-lg-4">
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Reserve</h5>
-                                <form action="{{ route('reserve.create', $room->id) }}" method="GET">
-                                    <button type="submit" class="btn btn-primary w-100">Reserve</button>
-                                </form>
+                                @auth
+                                    <form action="{{ route('reserve.store') }}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="room_id" value="{{ $room->id }}">
+
+                                        <div class="mb-3">
+                                            <label for="username" class="form-label">Name</label>
+                                            <input type="text" class="form-control" id="username" name="username"
+                                                value="{{ Auth::user()->username }} {{ Auth::user()->lastname }}"
+                                                readonly>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="room_name" class="form-label">Room Name</label>
+                                            <input type="text" class="form-control" id="room_name" name="room_name"
+                                                value="{{ $room->type }}" readonly>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="location" class="form-label">Location</label>
+                                            <input type="text" class="form-control" id="location" name="location"
+                                                value="{{ $room->location }}" readonly>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="checkin" class="form-label">Check-in</label>
+                                            <input type="date" class="form-control" id="checkin" name="checkin"
+                                                required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="checkout" class="form-label">Check-out</label>
+                                            <input type="date" class="form-control" id="checkout" name="checkout"
+                                                required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="guests" class="form-label">Guests</label>
+                                            <select class="form-select" id="guests" name="guests" required>
+                                                <option value="1">1 guest</option>
+                                                <option value="2">2 guests</option>
+                                                <option value="3">3 guests</option>
+                                                <option value="4">4 guests</option>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100">Reserve</button>
+                                    </form>
+                                @else
+                                    <p class="text-danger">You must be logged in to make a reservation.</p>
+                                    <a href="{{ route('login') }}" class="btn btn-primary w-100">Login</a>
+                                    <a href="{{ route('register') }}"
+                                        class="btn btn-outline-secondary w-100 mt-2">Register</a>
+                                @endauth
                                 <hr>
                                 <div>
                                     <h6>Price Calculation</h6>
@@ -221,29 +191,6 @@
             </div>
         </div>
 
-        <!-- Modal for All Photos -->
-        <div class="modal fade" id="allPhotosModal" tabindex="-1" aria-labelledby="allPhotosModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="allPhotosModalLabel">All Photos</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            @foreach ($photos as $photo)
-                                <div class="col-md-4 mb-3">
-                                    <img src="{{ asset($photo->photo) }}" alt="Room Photo" class="img-fluid"
-                                        style="width: 100%; height: 150px; object-fit: cover;">
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <br>
         <br>
@@ -324,7 +271,7 @@
                                 <a href="">Home</a>
                                 <a href="">Cookies</a>
                                 <a href="">Help</a>
-                                <a href="">FQAs</a>
+                                <a href="">FAQs</a>
                             </div>
                         </div>
                     </div>

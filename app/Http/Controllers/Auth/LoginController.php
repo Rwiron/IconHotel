@@ -34,9 +34,9 @@ class LoginController extends Controller
                 case 'staff':
                     return redirect()->route('staff.dashboard'); // Redirect to the staff dashboard
                 case 'guest':
-                    return redirect()->route('guest.dashboard'); // Redirect to the guest dashboard
+                    return redirect('/'); // Redirect to the home page
                 default:
-                    return redirect()->route('dashboard'); // Redirect to a general dashboard
+                    return redirect('/'); // Redirect to the home page
             }
         }
 

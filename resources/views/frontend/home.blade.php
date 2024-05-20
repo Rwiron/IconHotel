@@ -314,8 +314,8 @@
                                         <div class="d-flex justify-content-between">
                                             <a class="btn btn-sm btn-primary rounded py-2 px-4"
                                                 href="{{ route('room.detail', $room->id) }}">View Detail</a>
-                                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="#">Book
-                                                Now</a>
+                                            {{-- <a class="btn btn-sm btn-dark rounded py-2 px-4" href="#">Book
+                                                Now</a> --}}
                                         </div>
 
                                     </div>

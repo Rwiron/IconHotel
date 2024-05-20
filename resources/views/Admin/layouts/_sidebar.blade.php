@@ -86,69 +86,96 @@
                 </ul>
             </li><!-- End Staff Management Nav -->
 
-
+            <!-- User Management Nav -->
 
             <li class="nav-item">
-                <a class="nav-link {{ in_array(Request::segment(1), ['booking-reports', 'view-reports', 'financial-reports']) ? '' : 'collapsed' }}"
-                    data-bs-target="#booking-reports-dropdown" data-bs-toggle="collapse">
-                    <i class="bi bi-file-earmark-text"></i>
-                    <span>Booking Reports</span>
+                <a class="nav-link {{ in_array(Request::segment(2), ['users', 'add-user', 'list-users']) ? '' : 'collapsed' }}"
+                    data-bs-target="#user-mgmt-dropdown" data-bs-toggle="collapse">
+                    <i class="bi bi-person"></i>
+                    <span>User Management</span>
                     <i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="booking-reports-dropdown"
-                    class="nav-content collapse {{ in_array(Request::segment(1), ['booking-reports', 'view-reports', 'financial-reports']) ? 'show' : '' }}"
+                <ul id="user-mgmt-dropdown"
+                    class="nav-content collapse {{ in_array(Request::segment(2), ['users', 'add-user', 'list-users']) ? 'show' : '' }}"
                     data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{ url('booking-reports/overview') }}"
-                            class="{{ Request::is('booking-reports/overview') ? 'active' : '' }}">
-                            <i class="bi bi-bar-chart"></i><span>Overview of Bookings</span>
+                        <a href="{{ route('admin.users.index') }}"
+                            class="{{ Request::is('admin/users') ? 'active' : '' }}">
+                            <i class="bi bi-list"></i><span>List Users</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('booking-reports/financial') }}"
-                            class="{{ Request::is('booking-reports/financial') ? 'active' : '' }}">
-                            <i class="bi bi-currency-dollar"></i><span>Financial Reports</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('booking-reports/details') }}"
-                            class="{{ Request::is('booking-reports/details') ? 'active' : '' }}">
-                            <i class="bi bi-journal-text"></i><span>Detailed Reports</span>
+                        <a href="{{ route('admin.users.create') }}"
+                            class="{{ Request::is('admin/users/create') ? 'active' : '' }}">
+                            <i class="bi bi-plus-circle"></i><span>Add User</span>
                         </a>
                     </li>
                 </ul>
-            </li><!-- End Booking Reports Nav -->
+                </li><!-- End User Management Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link {{ in_array(Request::segment(1), ['event-management', 'create-event', 'list-events']) ? '' : 'collapsed' }}"
-                    data-bs-target="#event-mgmt-dropdown" data-bs-toggle="collapse">
-                    <i class="bi bi-calendar-event"></i>
-                    <span>Event Management</span>
-                    <i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="event-mgmt-dropdown"
-                    class="nav-content collapse {{ in_array(Request::segment(1), ['event-management', 'create-event', 'list-events']) ? 'show' : '' }}"
-                    data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="{{ url('event-management/create-event') }}"
-                            class="{{ Request::is('event-management/create-event') ? 'active' : '' }}">
-                            <i class="bi bi-plus-circle"></i><span>Create Event</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('event-management/list-events') }}"
-                            class="{{ Request::is('event-management/list-events') ? 'active' : '' }}">
-                            <i class="bi bi-list-check"></i><span>List Events</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('event-management/event-reports') }}"
-                            class="{{ Request::is('event-management/event-reports') ? 'active' : '' }}">
-                            <i class="bi bi-graph-up"></i><span>Event Reports</span>
-                        </a>
-                    </li>
-                </ul>
-            </li><!-- End Event Management Nav -->
+
+
+                <li class="nav-item">
+                    <a class="nav-link {{ in_array(Request::segment(1), ['booking-reports', 'view-reports', 'financial-reports']) ? '' : 'collapsed' }}"
+                        data-bs-target="#booking-reports-dropdown" data-bs-toggle="collapse">
+                        <i class="bi bi-file-earmark-text"></i>
+                        <span>Booking Reports</span>
+                        <i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="booking-reports-dropdown"
+                        class="nav-content collapse {{ in_array(Request::segment(1), ['booking-reports', 'view-reports', 'financial-reports']) ? 'show' : '' }}"
+                        data-bs-parent="#sidebar-nav">
+                        <li>
+                            <a href="{{ url('booking-reports/overview') }}"
+                                class="{{ Request::is('booking-reports/overview') ? 'active' : '' }}">
+                                <i class="bi bi-bar-chart"></i><span>Overview of Bookings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('booking-reports/financial') }}"
+                                class="{{ Request::is('booking-reports/financial') ? 'active' : '' }}">
+                                <i class="bi bi-currency-dollar"></i><span>Financial Reports</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('booking-reports/details') }}"
+                                class="{{ Request::is('booking-reports/details') ? 'active' : '' }}">
+                                <i class="bi bi-journal-text"></i><span>Detailed Reports</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li><!-- End Booking Reports Nav -->
+
+                <li class="nav-item">
+                    <a class="nav-link {{ in_array(Request::segment(1), ['event-management', 'create-event', 'list-events']) ? '' : 'collapsed' }}"
+                        data-bs-target="#event-mgmt-dropdown" data-bs-toggle="collapse">
+                        <i class="bi bi-calendar-event"></i>
+                        <span>Event Management</span>
+                        <i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="event-mgmt-dropdown"
+                        class="nav-content collapse {{ in_array(Request::segment(1), ['event-management', 'create-event', 'list-events']) ? 'show' : '' }}"
+                        data-bs-parent="#sidebar-nav">
+                        <li>
+                            <a href="{{ url('event-management/create-event') }}"
+                                class="{{ Request::is('event-management/create-event') ? 'active' : '' }}">
+                                <i class="bi bi-plus-circle"></i><span>Create Event</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('event-management/list-events') }}"
+                                class="{{ Request::is('event-management/list-events') ? 'active' : '' }}">
+                                <i class="bi bi-list-check"></i><span>List Events</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('event-management/event-reports') }}"
+                                class="{{ Request::is('event-management/event-reports') ? 'active' : '' }}">
+                                <i class="bi bi-graph-up"></i><span>Event Reports</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li><!-- End Event Management Nav -->
         @endif
 
         @if (Auth::user()->role === 'staff')

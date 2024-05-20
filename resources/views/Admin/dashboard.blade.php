@@ -26,4 +26,71 @@
             </ol>
         </nav>
     </div><!-- End Page Title -->
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="small-box bg-muted text-dark">
+                <div class="card-body">
+                    <h5 class="card-title">Total Users</h5>
+                    <h3>{{ $totalUsers }}</h3>
+                    <a href="{{ route('admin.users.index') }}" class="text-dark">More info <i
+                            class="bi bi-arrow-right-circle-fill"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="small-box bg-success text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Total Rooms</h5>
+                    <h3>{{ $totalRooms }}</h3>
+                    <a href="#" class="text-white">More info <i class="bi bi-arrow-right-circle-fill"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="small-box bg-info text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Total Admins</h5>
+                    <h3>{{ $totalAdmins }}</h3>
+                    <a href="#" class="text-white">More info <i class="bi bi-arrow-right-circle-fill"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="small-box bg-warning text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Total Staffs</h5>
+                    <h3>{{ $totalStaffs }}</h3>
+                    <a href="#" class="text-white">More info <i class="bi bi-arrow-right-circle-fill"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="small-box bg-danger text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Total Guests</h5>
+                    <h3>{{ $totalGuests }}</h3>
+                    <a href="#" class="text-white">More info <i class="bi bi-arrow-right-circle-fill"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="small-box bg-secondary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Occupied Rooms</h5>
+                    <h3>{{ $occupiedRooms }}</h3>
+                    <a href="#" class="text-white">More info <i class="bi bi-arrow-right-circle-fill"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="small-box bg-primary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Available Rooms</h5>
+                    <h3>{{ $availableRooms }}</h3>
+                    <a href="#" class="text-white">More info <i class="bi bi-arrow-right-circle-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

@@ -4,11 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Staff\DashboardController as StaffDashboardController;
 use App\Http\Controllers\Guest\DashboardController as GuestDashboardController;
 use App\Http\Controllers\Room\RoomController;
 use App\Http\Controllers\Room\ListRoomController;
 use App\Http\Controllers\Room\RoomImageController;
+use App\Http\Controllers\Room\ReservationController;
 use App\Http\Controllers\Room\RoomServiceController;
 use App\Http\Controllers\Room\RoomDetailController;
 use App\Http\Controllers\Staff\AddStaffController;
@@ -30,6 +32,14 @@ Route::get('/', [webController::class, 'index'])->name('room');
 Route::get('/room/{id}', [WebController::class, 'show'])->name('room.detail');
 Route::get('/services', [WebController::class, 'services'])->name('services');
 Route::get('/about', [WebController::class, 'about'])->name('about');
+// Route::get('/reserve/{room}', [ReservationController::class, 'create'])->name('reserve.create');
+// Route::post('/reserve', [ReservationController::class, 'store'])->name('reserve.store');
+
+// Reservation routes
+Route::middleware(['auth', 'checkrole:guest'])->group(function () {
+    Route::get('/reserve/{room}', [ReservationController::class, 'create'])->name('reserve.create');
+    Route::post('/reserve', [ReservationController::class, 'store'])->name('reserve.store');
+});
 
 
 // Route to show the registration form
@@ -82,6 +92,11 @@ Route::middleware(['auth', 'checkrole:admin'])->group(function () {
         Route::get('staff/{id}/edit', [AddStaffController::class, 'edit'])->name('admin.staff.edit');
         Route::put('staff/{id}', [AddStaffController::class, 'update'])->name('admin.staff.update');
         Route::delete('staff/{id}', [AddStaffController::class, 'destroy'])->name('admin.staff.destroy');
+    });
+
+    //user management
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::resource('users', UserController::class);
     });
 
 });
